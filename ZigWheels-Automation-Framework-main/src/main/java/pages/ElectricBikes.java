@@ -49,9 +49,13 @@ public class ElectricBikes {
 	
 	public void printingEBikeDetails() {
 		try {
-			WebElement name=driver.findElement(By.xpath("//a[@data-track-label='-model-name']"));
-			System.out.println(name.getText());
+			WebElement name=driver.findElement(By.xpath("//h1"));
 			
+			WebElement price=driver.findElement(By.xpath("//span[contains(text(),'Rs')]"));
+			
+			System.out.println("\n=====ELECTRIC BIKE DETAILS =====");
+            System.out.println("Name: " + name.getText());
+            System.out.println("Price: " + price.getText());
 		}
 		catch(Exception e) {
 			System.out.println("Unable to fetch Full Data");
